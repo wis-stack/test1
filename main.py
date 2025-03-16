@@ -2,7 +2,9 @@ import streamlit as st
 import joblib
 from joblib import load
 import pandas as pd
+import numpy as np 
 import os
+from surprise import Dataset, Reader 
 
 # Debugging: Check if files exist
 if not os.path.exists('movie_recommender.joblib'):
