@@ -22,8 +22,8 @@ if not os.path.exists('user_interactions.xls'):
 # Load the saved model and data
 try:
     model = load('movie_recommender.joblib')  # Your trained SVD model
-    titles = pd.read_excel('titles.xls', usecols=['id', 'title', 'genres', 'release_year'])  # Movie metadata
-    user_interactions = pd.read_excel('user_interactions.xls', usecols=['user_id', 'id', 'rating'])  # User interactions
+    titles = pd.read_csv('titles.xls', usecols=['id', 'title', 'genres', 'release_year'])  # Movie metadata
+    user_interactions = pd.read_csv('user_interactions.xls', usecols=['user_id', 'id', 'rating'])  # User interactions
 except Exception as e:
     st.error(f"Error loading file: {e}")
     st.stop()
